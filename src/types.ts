@@ -268,12 +268,18 @@ export interface LovelaceCardConfig {
   [key: string]: any;
 }
 
+export interface LovelaceLayoutOptions {
+  grid_columns?: number;
+  grid_rows?: number;
+}
+
 export interface LovelaceCard extends HTMLElement {
   hass?: HomeAssistant;
   isPanel?: boolean;
   editMode?: boolean;
   getCardSize(): number | Promise<number>;
   setConfig(config: LovelaceCardConfig): void;
+  getLayoutOptions(): LovelaceLayoutOptions;
 }
 
 export interface LovelaceCardEditor extends HTMLElement {
